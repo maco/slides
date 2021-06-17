@@ -71,6 +71,9 @@ Every morning.
 \pause
 
 At 6AM.
+\pause
+
+I'm not a morning person.
 \end{frame}
 
 \note{
@@ -91,7 +94,7 @@ To be clear, I'm not the one who did the initial port to Elixir. There were cont
 \note{
 Moving as much computation into the database and out of the code as possible is a pretty common piece of advice for optimization. You know, sort and limit on the database instead of in code, so the database has less stuff to return to start with.
 
-This is a story of when and how to refactor the opposite direction.
+This is a story of when to refactor the opposite direction and how a couple Elixir features helped.
 
 If you've worked for a newspaper during a presidential election,  you know that everyone is on call that night, and users are hammering the servers, trying to find out who won.}
 
@@ -112,6 +115,7 @@ If you've worked for a newspaper during a presidential election,  you know that 
 
 \begin{frame}
 \frametitle{Break it down}
+\pause
 	What if we do 4 smaller queries?
 	\pause
 	\lstinputlisting[language=elixir]{step_1.ex}
@@ -123,6 +127,7 @@ If you've worked for a newspaper during a presidential election,  you know that 
 
 \begin{frame}
 \frametitle{Not DRY enough}
+\pause
 	What if we take advantage of atoms and the pin operator?
 	\pause
 	\lstinputlisting[language=elixir]{step_2.ex}
@@ -134,6 +139,7 @@ If you've worked for a newspaper during a presidential election,  you know that 
 
 \begin{frame}
 \frametitle{Just a little further}
+\pause
 	What if we use Elixir's famed concurrency?
 	\pause
 	\begin{columns}
@@ -152,9 +158,12 @@ If you've worked for a newspaper during a presidential election,  you know that 
 \frametitle{Results}
 	\begin{itemize}
 		\item DB CPU utilization: 50\% $\rightarrow$ 40\% (-20\%)
+\pause
 		\item Postgres analyze cost: 3614 $\rightarrow$ 16
-		\item Postgres analyze execution time: 8.424ms $\rightarrow 0.125ms \times 4 = 0.5ms$
+		\item Postgres analyze execution time: 8.424ms $\rightarrow$ 0.125ms $\times$ 4 $=$ 0.5ms
+\pause
 		\item Max requests per second: 700\%
+\pause
 		\item Stress-free Election Night
 	\end{itemize}
 \end{frame}
