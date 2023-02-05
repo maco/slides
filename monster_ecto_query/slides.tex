@@ -53,10 +53,10 @@
 
 
 %Information to be included in the title page:
-\title{Dealing with a Monster Ecto Query}
+\title{Dealing with a Monster Query}
 \author{Mackenzie Morgan}
-\institute{Axios}
-\date{Elixir Wizards Conference 2021}
+%\institute{Axios}
+\date{FOSDEM 2023}
 
 \begin{document}
 
@@ -64,7 +64,7 @@
 
 \begin{frame}
 \frametitle{About Me}
-A year ago, I learned Elixir because we launched the Axios mobile app and immediately crashed Apollo.
+In 2020, I learned Elixir because my team at Axios launched our mobile app and immediately crashed Apollo.
 \pause
 
 Every morning.
@@ -85,7 +85,7 @@ To be clear, I'm not the one who did the initial port to Elixir. There were cont
 	A single complex query with a lot of ORs is responsible for the majority of our database load.
 	\pause
 	
-	And the biggest day in US political news is next week.
+	And the biggest day in US political news was the following week.
 	\pause
 	
 	(the presidential election)
@@ -123,7 +123,7 @@ If you've worked for a newspaper during a presidential election,  you know that 
 	Written out 4 times,  once for each taxonomy
 \end{frame}
 
-\note{That alone is gets us down to Postgres saying its cost is 16 and execution time is 0.125ms, so we're on the right track. But it's no prettier than the original.}
+\note{That alone gets us down to Postgres saying its cost is 16 and execution time is 0.125ms, so we're on the right track. But it's no prettier than the original.}
 
 \begin{frame}
 \frametitle{Not DRY enough}
@@ -152,7 +152,7 @@ If you've worked for a newspaper during a presidential election,  you know that 
 	\end{columns}
 \end{frame}
 
-\note{Hey, there we go. Now, we can make all 4 queries at the same time, just passing in the list of taxonomies. That's really nice if you ever need more taxonomies. (Guess what? I'm now using 5.)}
+\note{Hey, there we go. Now, we can make all 4 queries at the same time, just passing in the list of taxonomies. That's really nice if you ever need more taxonomies. (Guess what? It was 5 by the time I left Axios.)}
 
 \begin{frame}
 \frametitle{Results}
@@ -168,12 +168,12 @@ If you've worked for a newspaper during a presidential election,  you know that 
 	\end{itemize}
 \end{frame}
 
-\note{This isn't the first newspaper I've worked for. I remember the stress of mid-term elections, smooth sailing for the presidential was a nice change. And look, our day-to-day database CPU usage went down by 20\% too.}
+\note{This wasn't the first newspaper I ever worked for. I remember the stress of mid-term elections, smooth sailing for the presidential was a nice change. And look, our day-to-day database CPU usage went down by 20\% too.}
 
 \begin{frame}
 \frametitle{Find Me Online}
   \begin{itemize}
-    \item \textbf{Twitter:} @maco\_nix
+    \item \textbf{Fediverse:} @maco@wandering.shop
     \item \textbf{GitHub:} @maco
     \item \textbf{Homepage:} mackenzie.morgan.name
     \item \textbf{Elixir Slack:} @maco
